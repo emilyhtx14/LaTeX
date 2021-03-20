@@ -1,0 +1,65 @@
+\documentclass{article}
+
+% Font package
+    \usepackage[utf8]{inputenc}
+
+% Helpful math packages
+\usepackage{amsmath,amsthm,amssymb} 
+
+% Algorithm2e import:
+    \usepackage[ruled,vlined]{algorithm2e}
+
+% Title info
+    \title{Algorithms} 
+    \author{Adam Zawierucha} % Add your full name in the braces.
+    \date{March 20, 2021}
+
+% Start of visible code
+\begin{document}
+\maketitle
+\section{How to make algorithms?}
+With the \textbf{algorithm2e} package! Make sure you are using the package "\textbackslash[ruled,vlined]\{algorithm2e\}
+".
+
+\section{Template}
+\begin{algorithm}[H]\caption{Line}
+  \KwIn{Some input $x$}
+  \KwOut{Some output $y$}
+  \nl $m \leftarrow 2$\;
+  \nl $c \leftarrow 6$\;
+  \nl $y \leftarrow m \cdot x + c$\;
+  \nl \Return{$y$}\;
+\end{algorithm}
+
+\section{Sample}
+\begin{algorithm}[H]\caption{Something}
+  \KwIn{$g = (V,E,w)$, a graph}
+  \KwIn{$s\in V$, a start node}
+  \nl $Q \leftarrow V$\;
+  \nl $S \leftarrow \emptyset$\;
+  \nl\While{$|Q| > 0$}{
+    \nl $u \leftarrow \textrm{EXTRACT-MIN}(Q)$\;
+    \nl $S\leftarrow S\cup \{u\}$\;
+    \nl\If{something}{
+        \Return{awesome}\;
+    }
+    \nl\ForEach{$v\in$ \textrm{neighbors of} $u$ }{
+      \nl\If{$v.d > u.d+w(u,v)$}{
+        \nl $v.d \leftarrow u.d + w(u,v)$\;
+        \nl $v.\pi = u$\;
+      }
+    }
+    \nl\For{$i\in\mathbb{N}$}{
+        \nl\uIf{$i \% 2 = 0$}{ %the u infront of if makes the line not curl
+            \nl\Return\;
+        }\nl\uElseIf{$i \% 3 = 0$}{
+            \nl\textbf{break}\;
+        }\nl\Else{
+            \nl$x \leftarrow 1$\;
+        }
+    }
+  }
+\end{algorithm}
+
+
+\end{document}
